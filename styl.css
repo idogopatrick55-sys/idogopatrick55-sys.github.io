@@ -1,0 +1,593 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-color:#0f1c2e;
+    color:white;
+	 background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('menufond.jpeg') center/cover;
+}
+header{
+	 background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+    }
+	
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:gold;
+}
+
+.logo{
+    color:gold;
+    font-size:22px;
+    font-weight:bold;
+	display: flex;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imgl{
+	width:120px;
+	height: auto;
+	border-radius: 10px;
+}
+.imgl:hover {
+	transform: scale(1.1);
+	transition: 0.3s;
+}	
+
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:08px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    transition:0.3s;
+	border:5px solid #000;
+	border-radius: 20px;
+	background: white;
+}
+
+nav ul li a:hover{
+    color:white;
+	background:#ff9800;
+}
+
+/* HERO */
+.hero{
+	padding:20px;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+}
+
+.hero-content h2{
+	text-align:center;
+    font-size:45px;
+    color:gold;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero-text {   
+     background: #ff9800;
+	 color:black;
+	 border-radius: 350px;
+	font-size:18px;
+}
+.titre-photo{
+text-align:center;
+margin-top:40px;
+font-size: 35px;
+color:#ff9800;
+}
+
+.galerie{
+width:100%;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+padding:10px;
+}
+
+.galerie img{
+width:130px;
+height:130px;
+object-fit:cover;
+border-radius:10px;
+border: 3px solid #ff9800;
+}
+.galerie img:hover{
+	transform: scale(1.05);
+	transition: 0.3s;
+	}
+.sympa {
+	color:gold;
+	font-size:25px;
+	}
+	
+@media (max-width:600px){
+
+.galerie img{
+width:	25%;
+}
+
+}
+	
+/* SPECIALITES */
+.specialites{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.specialites h2{
+    color:gold;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#14253d;
+    padding:25px;
+    border-radius:10px;
+    width:250px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:gold;
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+footer{
+    background:#0b1624;
+    padding:20px;
+    text-align:center;
+    margin-top:40px;
+}
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.card button{
+    margin-top:10px;
+    padding:8px 15px;
+    background:gold;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+.total{
+    margin-top:40px;
+    font-size:22px;
+    color:gold;
+}
+
+
+.card{
+    background:#14253d;
+    padding:15px;
+    border-radius:10px;
+    width:250px;
+    margin:20px auto;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+input, textarea{
+    display:block;
+    margin:10px auto;
+    padding:10px;
+    width:250px;
+    border-radius:5px;
+    border:none;
+}
+
+}
+
+#menu{
+margin-top:30px;
+padding-top:10px
+}
+
+.menu-section{
+	position: relative;
+    min-height: 100vh; /* pour forcer une hauteur */
+    display: none;
+    gap: 20px;
+	text-align: center;   
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+.categories button {
+    background: linear-gradient(45deg, #d4af37, #ffd700);
+    color: #000;
+    border: 2px solid rgba(0,0,0,0.3);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.categories button:hover{
+transform: scale(1.05);
+}
+
+.menu-section button {
+    background-color: #ffcc70;
+    color: #333;
+    border: 2px solid rgba(0,0,0,0.3); 
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h1 {
+    color: #d4af37; /* doré élégant */
+    font-family: 'Arial', sans-serif;
+}
+.banniere {
+    background: url('HAUT.jpeg') center/cover no-repeat;
+	padding: 70px 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+}
+
+input, button {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.rating {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.star {
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.star.active {
+    color: gold;
+}
+
+
+input, select, button {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px;
+    padding: 20px;
+    background: #fff8f0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.total-box {
+    font-weight: bold;
+    color: green;
+    background: #eaffea;
+}
+
+.btn-commande {
+    padding: 10px;
+    background: #d4a373;
+    color: #fff8f0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-commande:hover {
+    background: #b5835a;
+    transform: scale(1.05);
+}
+
+.message {
+    font-weight: bold;
+}
+.form-box {
+    background-color: #fff3e6;  /* change ici */
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-box label {
+    color: #333;
+}
+textarea {
+    width: 250px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+.commentaire {
+    background: #eaffea;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#horaires{
+   background-color: #111;
+   color: white;
+   padding: 20px;
+   width: 300px;
+   margin: 20px auto;
+   border-radius: 10px;
+}
+
+#horaires h2{
+   text-align: center;
+   color: gold;
+}
+
+.horaire-item{
+   display: flex;
+   justify-content: space-between;
+   margin: 8px 0;
+   border-bottom: 1px solid #444;
+   padding-bottom: 5px;
+}
+.btn-livreur{
+   display: inline-block;
+   background-color: #ff9800; /* orange dynamique */
+   color: white;
+   padding: 10px 18px;
+   border-radius: 30px;
+   text-decoration: none;
+   font-weight: bold;
+   margin-top: 15px;
+}
+#formCommande{
+   background:black;
+   padding:15px;
+   border-radius:10px;
+   width:300px;
+}
+
+#formCommande input,
+#formCommande select{
+   width:100%;
+   padding:5px;
+}
+#FormCommande{
+   background:black;
+   padding:15px;
+   border-radius:10px;
+   width:300px;
+}
+
+#FormCommande input,
+#FormCommande select{
+   width:100%;
+   padding:5px;
+}
+html {
+	scroll-behavior: smooth;
+	}
+.boss{ 
+     width:100%;
+	 }
+/* Carte produit */
+
+
+/* Image */
+.card img {
+    width: 100%;
+    border-radius: 6px;
+	position: center;
+}
+
+/* Bouton commander */
+.card button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+	color: #ff9800;
+    background: gold;
+}
+
+/* Formulaire caché par défaut */
+.commande-form {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #ff9800;
+	color: #ff9800;
+}
+
+/* Champs */
+.commande-form input,
+.commande-form select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Total */
+.total {
+    font-weight: bold;
+    color: #e63950;
+}
+
+.commande-form {
+    display: none;
+}
+h2{
+    color: gold;
+}
+.IDG {
+	 background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+	}
+
+.IDG h2 {
+	color: white;
+	}
+	
+@media (max-width: 768px) {
+
+nav ul{
+flex-direction: column;
+}
+
+.menu-grid{
+grid-template-columns: 1fr;
+}
+
+header h1{
+font-size: 28px;
+}
+
+}
+img{
+max-width:100%;
+height:auto;
+}
+.etoiles span{
+font-size:35px;
+cursor:pointer;
+color:gray;
+transition:0.3s;
+}
+
+.etoiles span.active{
+opacity:1;
+transform:scale(1.2);
+color:gold;
+}
+input, textarea, select{
+font-size:16px;
+width:50%;
+box-sizing:border-box;
+}
+#gateau{
+	background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('PHOTO0.jpeg') center/cover;
+}
+#pizzas{
+	background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('pizza2.jpeg') center/cover;
+}
+#met{
+	background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('Bénédiction1.jpeg') center/cover;
+}
+.riche{
+	font-size:15px;
+width:100%;
+box-sizing:border-box;
+}
+#commande{
+	background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('ceremonie.jpeg') center/cover;
+}
+#livraison{
+	background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('livraison.jpeg') center/cover;
+}
+

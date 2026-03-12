@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Délice Royal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styl.css">
+		<link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#000000">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Delice Resto">
+		<link rel="apple-touch-icon" href="icon-192.png">
+    </head>
+	
+    <header id="header">
+	<div class="logo">
+        <img src="logo.jpeg" alt="Délice Royale" class="imgl">
+        <h1><em>👑Délice Royal👑</em></h1>
+    </div>
+	
+	<section class="banniere">
+    </section>
+	
+    <nav>
+       <div class="hero-text"><strong>🚚Livraison possible.</strong></div>
+    <ul>
+        <li><a href="#accueil">ACCEUIL🏠</a></li>
+        <li><a href="#menu">   MENU🍕</a></li>
+        <li><a href="#apropos">À PROPOS👤</a></li>
+        <li><a href="#contact">CONTACT📞</a></li>
+    </ul>
+    </nav>
+</header>
+                   <!-- Acceuil --> 
+     <body>
+	
+<div id="installContainer" style="display:none;">
+
+<button id="installBtn">
+Installer l'application sur androïd
+</button>
+
+<p id="iosInstall" style="display:none;">
+Pour installer l'application sur iPhone :
+<br>
+1. Cliquez sur le bouton "partager 📤"
+<br>
+2.Cliquez sur "en voir plus"
+<br>
+3. Choisissez "Sur l'écran d'accueil"
+</p>
+
+</div>
+    <section id="accueil" class="hero">
+
+<div class="hero-content">
+<h2>L’Excellence du Goût</h2>
+
+<p>
+• 🎂 Gâteau Spécial • 🍕 Pizzas • 🍜 Mets Traditionnels
+• 🎉 Commandes pour Cérémonie • 🚚 Service livraison
+</p>
+</div>
+
+<h4 class="titre-photo">Plus proche de vous 🚀</h4>
+
+<div class="galerie">
+
+<img src="PHOTOL.jpeg">
+<img src="pizza3.jpeg">
+<img src="tchep.jpeg">
+<img src="Babenda1.jpeg">
+<img src="Zamnin.jpeg">
+<img src="Bénédiction1.jpeg">
+<img src="placali.jpeg">
+<img src="feli.jpeg">
+<img src="foutou.jpeg">
+
+</div>
+<em class="sympa">Commandez dans le Menu </em>
+</section>
+	
+	 
+      	  <!-- MENU --> 
+    <section id="menu" class="IDG">
+         <h2>Notre Menu📋</h2>
+    <div class="categories">
+       <button onclick="showSection('gateau')">🎂Gâteau Spécial</button>
+		<p><button onclick="showSection('pizzas')">🍕Pizzas</button></p>
+		<p><button onclick="showSection('met')">🍜Mets traditionnel</button></p>
+		<p><button onclick="showSection('commande')">🎉Pour vos cérémonie</button></p>
+		<p><button onclick="showSection('livraison')">🚚 Besoin d’un Livreur ?</button></p>
+    
+	</div>
+    </section>
+
+                          <!-- Sous-catégorie -->
+    <div id="gateau" class="menu-section">
+
+      <button onclick="showSection('mariage')">Gâteau de Mariage</button>
+       <button onclick="showSection('anniversaire')">Gâteau d'Anniversaire</button>
+    </div>
+	
+	<div id="pizzas" class="menu-section">
+
+        <button onclick="showSection('viande')">Pizza viande hachée</button>
+        <button onclick="showSection('saison')">Pizza 4 saison</button>
+		<button onclick="showSection('royale')">Pizza royale</button>
+		<button onclick="showSection('speed')">Pizza speed</button>
+		<button onclick="showSection('mini')">Mini pizza</button>
+        
+    </div>
+	
+	<div id="met" class="menu-section">
+
+        <button onclick="showSection('gonre')">Gonré(fait à base de feuilles d'haricot)</button>
+        <button onclick="showSection('Zamnin')">Zamnin</button>
+		<button onclick="showSection('Koumvando')">Koumvando(feuilles d'aubergine)</button>
+		<button onclick="showSection('Foutou')">Foutou</button>
+		<p> <button onclick="showSection('Riz')">Riz gras-chep</button>
+		 	<button onclick="showSection('Babenda')">Babenda</button> 
+			<button onclick="showSection('Placali')">Placali</button></p>
+       
+    </div>
+	
+    <div id="commande" class="menu-section">
+        <button onclick="showSection('traiteur')">Service traiteur</button>
+        <button onclick="showSection('locaux')">Mets locaux</button>
+       
+    </div>
+	
+	  <div id="livraison" class="menu-section">
+	  <a href="tel:+22655198680" class="btn-livreur">
+   🚚 Appeler un Livreur
+</a>
+<a href="https://wa.me/22655198680?text=Bonjour%20j’ai%20besoin%20d’un%20livreur%20pour%20une%20livraison." 
+   target="_blank" 
+   class="btn-livreur">
+   🚚 WhatsApp Livreur
+</a>
+
+ 
+	  </div>
+								   <!-- Mariage -->
+	<div id="mariage" class="menu-section">
+	   <h2>Gâteaux de mariage</h2>
+      <div class="card">
+          <img src="PHOTO3.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+          <p>25.000 FCFA Modele A</p>
+          <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="25000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele A :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">25000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+
+    </div>
+
+    <div class="card">
+          <img src="PHOTO2.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+          <p>25.000 FCFA Modele B</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="25000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele B :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">25000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+
+    </div>
+		
+	<div class="card">
+          <img src="PHOTO0.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+          <p>25.000 FCFA Modele C</p>
+          <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="25000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele C :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">25000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+
+	</div>
+		 
+		 <div class="card">
+            <img src="PHOTOY.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+            <p>25.000 FCFA Modele D</p>
+            <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="25000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele D :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">25000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	
+    </div>
+			
+		<div class="card">
+            <img src="PHOTO5.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+            <p>10.000 FCFA Modele E</p>
+            <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele E :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+
+	 </div>	
+ <div class="card">
+            <img src="PHOTO6.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+            <p>10.000 FCFA Modele F</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button> 
+
+    <form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele F :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+</form>
+	 </div>	
+        
+		
+        <h2>Commande personnalisée</h2>
+           <p> Nom a écrire sur le gateau :</P>
+        <input type="text" id="nomClient" placeholder="Nom a écire sur le gateau">
+		    <p>Date de la cérémonie :</P>
+        <input type="date" id="dateEvent">
+		       <p>Détails sur le gateau</P>
+        <textarea id="details" placeholder="Détails du gâteau"></textarea>
+
+        <button onclick="commanderPersonnalise()">Commander personnalisé🚀</button> 
+	
+     </div>
+	 <!-- ANNIVERSAIRE -->
+     <div id="anniversaire" class="menu-section">
+
+    <h2>Gâteaux d'Anniversaire</h2>
+	
+	<div class="card">
+        <img src="PHOTOX.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>25.000 FCFA Modele1</p>
+       <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="25000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele1 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">25000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+
+    <div class="card">
+        <img src="PHOTO20.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA MODELE 2</p>
+       <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele2 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+
+    <div class="card">
+        <img src="PHOTO19.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele3</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele3 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+    
+	<div class="card">
+        <img src="PHOTO18.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele4</p>
+       <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele4 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+    
+	<div class="card">
+        <img src="PHOTO17.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele5</p>
+        <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele5 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+    <div class="card">
+        <img src="PHOTO16.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele6</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele6 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTO15.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele7</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele7 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTO14.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele8</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele8 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTO13.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele9</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele9 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+     <div class="card">
+        <img src="PHOTO12.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele10</p>
+        <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele10 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTO11.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA Modele11</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele11 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOQ.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele12</p>
+         <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele12 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOS.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele13</p>
+                <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele13 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOD.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele14</p>
+                 <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele14 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOF.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele15</p>
+                 <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele15 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOG.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele16</p>
+                <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele16 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOH.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele17</p>
+               <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele17 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOJ.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele18</p>
+                 <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele18 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOK.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele19</p>
+                 <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele19 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	<div class="card">
+        <img src="PHOTOL.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>7.000 FCFA Modele20</p>
+                <button type="button" onclick="ouvrirPremium(this)">
+Commander 🎂
+</button>
+<form class="commande-form" data-prix="7000">
+
+    <h2>Commande de gâteau</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez modele20 :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Texte sur gâteau -->
+    <div>
+        <label>Nom à écrire sur le gâteau :</label>
+        <input type="text" class="nom-gateau" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de gâteaux :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">7000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+    </div>
+	
+    <!-- Formulaire personnalisé -->
+    <h2>PERSONNALISER VOTRE MODELE🎂</h2>
+         <p> Nom  :</P>
+    <input type="text" id="nomAnniv" placeholder="Votre nom">
+	      <p> Nom a écrire sur le gateau :</P>
+    <input type="text" id="prenomAnniv" placeholder="Nom à écrire sur le gâteau">
+	       <p> Date de naissance :</P>
+    <input type="date" id="dateAnniv">
+	       <p> Détails :</P>
+    <textarea id="detailsAnniv" placeholder="Couleur, thème, âge..."></textarea>
+
+    <button onclick="commanderAnniversaire()">
+        Commander personnalisé🚀
+    </button>
+	
+    
+</div>
+            <!-- PIZZA VIANDE HACHE -->
+
+<div id="viande" class="menu-section">
+	   <h3>Pizza,viande hachée</h3>	   
+   <div class="card">
+	   <img src="pizza3.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>4.500 FCFA</p>
+        <button type="button" onclick="ouvrirPremium(this)">
+Commander 🍕
+</button>
+<form class="commande-form" data-prix="4500">
+
+    <h2>Commande viande hachée</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez viande hachée :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de pizza :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">4500</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	</div>  	
+    
+</div>
+               <!-- pizza 4 saison -->
+<div id="saison" class="menu-section">
+	   <h3>Pizza 4 saisons</h3>	   
+   <div class="card">
+	   <img src="pizza1.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>3.500 FCFA</p>
+        <button type="button" onclick="ouvrirPremium(this)">
+Commander 🍕
+</button>
+<form class="commande-form" data-prix="3500">
+      
+    <h2>Commande pizza 4saisons</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisisssez 4saisons :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de pizza :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">3500</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	</div>  
+
+</div>
+            <!-- Pizza royal -->
+<div id="royale" class="menu-section">
+	   <h3>Pizza royale</h3>	   
+   <div class="card">
+	   <img src="pizza4.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>5.000 FCFA</p>
+    <button type="button" onclick="ouvrirPremium(this)">
+        Commander 🍕
+    </button>
+
+    <form class="commande-form" data-prix="5000">
+	      <h2>Commande pizza royale</h2>
+
+        <div>
+            <label>Saisissez royale :</label>
+            <input type="text" class="nom-client" required>
+        </div>
+
+        <div>
+            <label>Nombre de pizza :</label>
+            <input type="number" class="quantite" value="1" min="1" required>
+        </div>
+
+        <div>
+            <label>Livraison :</label>
+            <select class="livraison" required>
+                <option value="">Choisir</option>
+                <option value="0">Non</option>
+                <option value="1000">Oui (+1000 F)</option>
+            </select>
+        </div>
+
+        <p>
+            <strong>Total :</strong>
+            <span class="total">5000</span> F CFA
+        </p>
+
+        <button type="button" class="btn-commander">
+            Lancer la commande🚀
+        </button>
+
+    </form>
+
+</div>
+	
+    
+</div>
+                     <!-- Pizza speed -->
+<div id="speed" class="menu-section">
+	   <h3>Pizza speed</h3>	   
+   <div class="card">
+	   <img src="pizza5.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>5.000 FCFA</p>
+       <button type="button" onclick="ouvrirPremium(this)">
+Commander 🍕
+</button>
+<form class="commande-form" data-prix="5000">
+
+    <h2>Commande pizza speed</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez speed :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de pizza :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">5000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	</div>  
+    
+</div>
+                <!-- mini pizza -->
+<div id="mini" class="menu-section">
+	   <h3>Mini pizza</h3>	   
+   <div class="card">
+	   <img src="pizza6.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>3.000 FCFA/ 1.lot de 1O</p>
+       <button type="button" onclick="ouvrirPremium(this)">
+Commander 🍕
+</button>
+<form class="commande-form" data-prix="3000">
+
+    <h2>Commande mini pizza 10 a 3OOOF</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez mini pizza :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de lot mini pizza :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">3000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	</div>  
+    
+</div>
+
+             <!-- Service-traiteur -->
+    <div id="traiteur" class="menu-section">
+	   <h3>Plateaux Crudités</h3>	   
+   <div class="card">
+	   <img src="SV.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>10.000 FCFA/ 1.Plateau</p>
+       <button type="button" onclick="ouvrirPremium(this)">
+Commander 🍕
+</button>
+<form class="commande-form" data-prix="10000">
+
+    <h2>Commande Crudités</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Saisissez Crudité :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de plateau :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">10.000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	</div>  
+   
+</div>
+
+            <!-- Mets locaux -->
+<div id="locaux" class="menu-section">
+	   <h2>Gonré( fait a base de feuille d'haricot)</h2>	   
+   <div class="card">
+   <h3>lancer la commande du Gonré</h3>
+   <img src="Bénédiction1.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+     <h2>Commande Gonré pour cérémonie</h2> 
+    <button onclick="ouvrirFORm()">Commander🍜</button>
+<div id="Céré" style="display:none; margin-top:15px;">
+   
+	   <form id="commandeForm">
+    <label>Nom :</label>
+    <input type="text" id="nom" required>
+
+    <label>Montant (min 5000 FCFA) :</label>
+    <input type="number" id="montant" required>
+
+    <label>Date de la cérémonie :</label>
+    <input type="date" id="date" required>
+
+    <button type="submit">Lancer la Commande🚀</button>
+
+    <p id="erreur" style="color:red;"></p>
+
+</form>
+	</div>
+	</div>
+    
+</div>
+                <!-- gonré -->
+<div id="gonre" class="menu-section">
+   <h3>Gonré</h3>
+
+   <div class="card">
+      <h3>NOUS SOMMES DISPONIBLE SAMEDI-DIMANCHE</h3>
+
+      <img src="Bénédiction1.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+
+      <h2>Commande Gonré</h2>
+
+      <button onclick="ouvrirFormGonre()">Commander🍜</button>
+
+      <div id="formCommandeGonre" style="display:none; margin-top:15px;">
+
+         <label>Nom :</label><br>
+         <input type="text" id="nomClientGonre" class="riche"><br><br>
+
+         <label>Commande :</label><br>
+         <select id="typeCommandeGonre" onchange="choixCommandeGonre()" class="riche">
+            <option value="">-- Choisir --</option>
+            <option value="gonre">Gonré</option>
+            <option value="combo">Gonré + Koumvando</option>
+         </select><br><br>
+
+         <div id="blocQuantiteGonre" style="display:none;">
+            <label>Nombre de plat Gonré (500f)</label><br>
+            <input type="number" id="nbPlatGonre" value="0" min="0" oninput="calculPrixGonre()" class="riche"><br><br>
+         </div>
+
+         <div id="blocQuantiteKoum" style="display:none;">
+            <label>Nombre de plat Koumvando (500f)</label><br>
+            <input type="number" id="nbPlatKoum" value="0" min="0" oninput="calculPrixGonre()" class="riche"><br><br>
+         </div>
+
+         <label>Livraison :</label><br>
+         <select id="livraisonGonre" onchange="calculPrixGonre()" class="riche" >
+            <option value="non">Non</option>
+            <option value="oui">Oui (+1000 FCFA)</option>
+         </select>
+         <br><br>
+
+         <p>Prix Total : <span id="prixTotalGonre">0</span> FCFA</p>
+
+         <button onclick="envoyerCommandeGonre()">Lancer la commande🚀</button>
+
+      </div>
+   </div>
+   
+</div>
+                <!-- Zamnin -->
+<div id="Zamnin" class="menu-section">
+	   <h2>Uniquement sur commande</h2>
+      <div class="card">
+          <img src="Zamnin.jpeg"onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+          <p>5000fcfa minimum</p>
+         <button class="ouvrir-commande">Commander🍜</button>
+
+     <form class="commande-zam" style="display:none;">
+	 
+	  <h2>Commande de zamnin</h2> 
+
+    <label>Nom :</label>
+    <input type="text" class="name" required>
+
+    <label>Montant (min 5000 FCFA) :</label>
+    <input type="number" class="somme" required>
+
+    <label>Date de la cérémonie :</label>
+    <input type="date" class="jour" required>
+
+    <button type="submit">Lancer la Commande🚀</button>
+
+    <p class="euror" style="color:red;"></p>
+
+</form>
+
+</div>
+
+</div>
+
+                  <!-- Riz gras-chep -->
+<div id="Riz"  class="menu-section">
+	   <h2>Riz Gras-Chep</h2>	   
+<div class="card">
+
+<h3>Riz Gras</h3>
+
+<img src="Riz gras1.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+
+<p>1000 FCFA / plat</p>
+
+<button onclick="toggleRiz()">Commander🍜</button>
+
+<div id="zoneCommandeRiz" class="IDG-commande" style="display:none; margin-top:15px;">
+
+<form id="formCommandeRiz" class="form-box">
+
+<label>Nom :</label>
+<input type="text" id="clientRiz" required class="riche">
+
+<label>Nombre de plats :</label>
+<input type="number" id="nbRiz" value="1" min="1" class="riche" >
+
+<label>Livraison :</label>
+<select id="livraisonRiz" class="riche">
+<option value="non">Non</option>
+<option value="oui">Oui (+1000 FCFA)</option>
+</select>
+
+<label>Détail :</label>
+<input type="text" id="detailRiz" class="riche">
+
+<label>Total :</label>
+<input type="text" id="totalRizCommande" readonly>
+
+<p id="infoCommandeRiz"></p>
+
+<button type="submit">Envoyer la commande 🚀</button>
+
+</form>
+
+</div>
+
+</div>
+	
+	<div class="card">
+     <h3>Commande Chep</h3>
+    <img src="tchep.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>2000-3500 FCFA / le plat</p>
+	<button onclick="OuvrirFor()">Commander🍜</button>
+
+<div id="Commande" class="IDG-commande" style="display:none; margin-top:15px;">
+<form id="chepForm" class="form-box">
+
+    <label>Nom :</label>
+    <input type="text" id="chepNom" required class="riche">
+
+    <label>Catégorie :</label>
+    <select id="chepType" class="riche">
+        <option value="2000">Chep Simple (2000 FCFA)</option>
+        <option value="3500">Chep Spécial (3500 FCFA)</option>
+    </select>
+
+    <label>Nombre de plats :</label>
+    <input type="number" id="chepQuantite" min="1" value="1" required class="riche" >
+
+    <label>Livraison :</label>
+    <select id="chepLivraison" class="riche">
+        <option value="non">Non</option>
+        <option value="oui">Oui (+1000 FCFA)</option>
+    </select>
+
+    <label>Détail :</label>
+    <input type="text" id="chepDetail" class="riche">
+
+    <label>Total :</label>
+    <input type="text" id="chepTotal" readonly class="total-box" class="riche">
+
+    <button type="submit" class="btn-commande">Lancer la commande🚀</button>
+
+</form>
+    </div>
+	</div>
+</div>
+                      <!-- Babenda -->
+    <div id="Babenda" class="menu-section">
+	   <h2>Babenda</h2>	   
+   <div class="card">
+        <h3>Commande Babenda</h3>
+		 <img src="Babenda1.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+        <p>500 FCFA / le plat</p>
+     <button type="button" onclick="ouvrirPremium(this)">
+Commander🍜
+</button>
+<form class="commande-form" data-prix="500">
+
+    <h2>Commande Babenda</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Ecrire Babenda :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de plat :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">500</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+
+
+    </div>
+	</div>
+
+                <!-- Koumvando -->
+  <div id="Koumvando" class="menu-section">
+	   <h2>KOUMVANDO</h2>	   
+   <div class="card">
+     <h3>NOUS SOMMES DISPONIBLE SAMEDI-DIMANCHE</h3>
+	   <img src="kvd.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+	   <h2>Commande Koumvando</h2>
+    <button onclick="OuvrirForm()">Commander🍜</button>
+
+<div id="FormCommande" style="display:none; margin-top:15px;">
+
+   <label>Nom :</label><br>
+   <input type="text" id="NoMClient"><br><br>
+
+   <label>Commande :</label><br>
+   <select id="TypCommande" onchange="ChoiCommande()">
+      <option value="">-- Choisir --</option>
+      <option value="Gonre">Koumvando</option>
+      <option value="Combo">Gonré + Koumvando</option>
+   </select><br><br>
+
+   <div id="quantite1" style="display:none;">
+      <label>Nombre de plat Koumvando: 500f/plat</label><br>
+      <input type="number" id="NbGonre" value="0" min="0" oninput="CalculPrix()"><br><br>
+   </div>
+
+   <div id="quantite2" style="display:none;">
+      <label>Nombre de plat Gonré: 500f/plat</label><br>
+      <input type="number" id="NbKoum" value="0" min="0" oninput="CalculPrix()"><br><br>
+   </div>
+   
+   <label>Livraison :</label><br>
+<select id="livraisonmet" onchange="CalculPrix()">
+   <option value="non">Non</option>
+   <option value="oui">Oui (+1000 FCFA)</option>
+</select>
+<br><br>
+
+   <p>Prix Total : <span id="PrixTotal">0</span> FCFA</p>
+
+   <button onclick="envoyeCommande()">Lancer la commande🚀</button>
+
+</div>
+</div>
+
+</div>
+               <!-- FOUTOU --> 
+<div id="Foutou" class="menu-section">
+	   <h2>Foutou</h2>	   
+   <div class="card">
+	   <img src="foutou.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+	   <h2>Commande Foutou</h2>
+	 <button type="button" onclick="ouvrirPremium(this)">
+Commander 🍜
+</button>
+<form class="commande-form" data-prix="2000">
+
+    <h2>2000f /Plat</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Ecrire foutou :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de plat :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">2000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	   </div>
+    
+   </div>
+               <!-- PLACALI --> 
+   
+   <div id="Placali" class="menu-section">
+	   <h2>PLACALI</h2>	   
+   <div class="card">
+	   <img src="placali.jpeg" onclick="ouvrirImage(this.src)" style="cursor:pointer;">
+	   <h2>Commande Placali</h2>
+	   <button type="button" onclick="ouvrirPremium(this)">
+Commander🍜
+</button>
+<form class="commande-form" data-prix="2000">
+
+    <h2>2000f 2boules /Plat</h2>
+
+    <!-- Nom client -->
+    <div>
+        <label>Ecrire placali :</label>
+        <input type="text" class="nom-client" required>
+    </div>
+
+    <!-- Quantité -->
+    <div>
+        <label>Nombre de plat :</label>
+        <input type="number" class="quantite" value="1" min="1">
+    </div>
+
+    <!-- Livraison -->
+    <div>
+        <label>Livraison :</label>
+        <select class="livraison">
+            <option value="0">Pas livraison</option>
+            <option value="1000">Oui (+1000 F)</option>
+        </select>
+    </div>
+
+    <!-- Total -->
+    <div>
+        <strong>Montant total : </strong>
+        <span class="total">2000</span> F CFA
+    </div>
+
+    <button type="button" class="btn-commander">
+        Lancer la commande🚀
+    </button>
+
+</form>
+	   
+	   </div>
+  
+   </div>
+</section>  
+
+<!-- A PROPOS -->
+<section id="apropos" class="specialites">
+    <h2>À propos</h2>
+    <p>Délice Royal vous proposes des plats de qualités avec un service royal 👑</p>
+	<p>Possibilité de vous faire livrer en toute confiance</p>
+	<p>Chez nous le client est roi🤴</p>
+</section>
+
+                      <!-- CONTACT -->
+    <section id="contact" class="specialites">
+         <h2>Contact</h2>
+         <p>Téléphone : 70017372</p>
+    </section>
+	                      <!-- horaire -->
+	<section id="horaires">
+   <h2>Nos Horaires</h2>
+
+   <div class="horaire-item">
+      <span>Lundi - Vendredi</span>
+      <span>08h00 - 22h00</span>
+   </div>
+
+   <div class="horaire-item">
+      <span>Samedi</span>
+      <span>09h00 - 22h00</span>
+   </div>
+
+   <div class="horaire-item">
+      <span>Dimanche</span>
+      <span>10h00 - 20h00</span>
+   </div>
+</section>
+
+  <h2>Donnez votre avis</h2>
+   <form action="https://formspree.io/f/xbdzljjq" method="POST" class="avisForm">
+  <label>Votre nom :</label>
+<input type="text" name="nom" placeholder="Votre nom" required class="riche">
+  <label>Votre commentaire :</label>
+<textarea name="avis" placeholder="Donnez votre avis" required class="riche"></textarea>
+
+<label>Votre note :</label>
+
+<div class="etoiles">
+  <span data-value="1">★</span>
+  <span data-value="2">★</span>
+  <span data-value="3">★</span>
+  <span data-value="4">★</span>
+  <span data-value="5">★</span>
+</div>
+
+<input type="hidden" name="note" id="note">
+
+<button type="submit">Envoyer</button>
+
+</form>
+	
+<footer>  
+    <p>© 2026 Délices Royale</p>
+</footer>
+<!-- Fenêtre image agrandie -->
+<div id="imageModal" class="modal" onclick="fermerImage()">
+    <img id="imageGrande">
+</div>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script src="script.js"></script>
+  </body>
+</html>
