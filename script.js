@@ -233,7 +233,7 @@ envoyerAvecPosition(texteCommande, numeroRestaurant);
 let lienWhatsApp =
 `https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
 
-envoyerAvecPosition(texteCommande, numeroRestaurant);
+window.location.href = lienWhatsApp;
 
 }
 
@@ -325,7 +325,7 @@ envoyerAvecPosition(message, numero);
 let url =
 `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
 
-envoyerAvecPosition(message, numero);
+window.open(url, "_blank");
 
 }
 
@@ -494,7 +494,7 @@ function envoyerCommandeGonre(){
       "https://wa.me/" + numero +
       "?text=" + encodeURIComponent(message);
 
-     envoyerAvecPosition(message, numero);
+     window.open(url, "_blank");
 
    }
 
@@ -588,7 +588,7 @@ function envoyeCommande(){
       "https://wa.me/" + numero +
       "?text=" + encodeURIComponent(message);
 
-      envoyerAvecPosition(message, numero);
+      window.open(url, "_blank");
 
    }
 }
@@ -725,7 +725,7 @@ Position : ${lienPosition}`;
             let url =
             `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
 
-            window.open(url, "_blank");
+           envoyerAvecPosition(message, numero);
 
         });
 
@@ -1052,7 +1052,15 @@ ouvrirWhatsApp(message, numero);
 }
 
 }
+if(livraison == "oui"){
 
+envoyerAvecPosition(message, numero);
+
+}else{
+
+ouvrirWhatsApp(message, numero);
+
+}
 
 function ouvrirWhatsApp(message, numero){
 
