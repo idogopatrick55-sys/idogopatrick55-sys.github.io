@@ -816,3 +816,8 @@ function fermerPopup(){
 document.getElementById("popup").style.display = "none";
 localStorage.setItem("popupDejaVu", "oui");
 }
+window.addEventListener("load", function(){
+setTimeout(function(){
+document.getElementById("loader").style.display = "none";
+}, 2500); // durée en millisecondes
+});
