@@ -224,7 +224,7 @@ Position : ${lienPosition}`;
 let lienWhatsApp =
 `https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
 
-window.location.href = lienWhatsApp;
+envoyerAvecPosition(texteCommande, numeroRestaurant);
 
 });
 
@@ -233,7 +233,7 @@ window.location.href = lienWhatsApp;
 let lienWhatsApp =
 `https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
 
-window.location.href = lienWhatsApp;
+envoyerAvecPosition(texteCommande, numeroRestaurant);
 
 }
 
@@ -316,7 +316,7 @@ Position : ${lienPosition}`;
 let url =
 `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
 
-window.open(url, "_blank");
+envoyerAvecPosition(message, numero);
 
 });
 
@@ -325,7 +325,7 @@ window.open(url, "_blank");
 let url =
 `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
 
-window.open(url, "_blank");
+envoyerAvecPosition(message, numero);
 
 }
 
@@ -484,7 +484,7 @@ function envoyerCommandeGonre(){
          "https://wa.me/" + numero +
          "?text=" + encodeURIComponent(message);
 
-         window.open(url, "_blank");
+        envoyerAvecPosition(message, numero);
 
       });
 
@@ -494,7 +494,7 @@ function envoyerCommandeGonre(){
       "https://wa.me/" + numero +
       "?text=" + encodeURIComponent(message);
 
-      window.open(url, "_blank");
+     envoyerAvecPosition(message, numero);
 
    }
 
@@ -578,7 +578,7 @@ function envoyeCommande(){
          "https://wa.me/" + numero +
          "?text=" + encodeURIComponent(message);
 
-         window.open(url, "_blank");
+         envoyerAvecPosition(message, numero);
 
       });
 
@@ -588,7 +588,7 @@ function envoyeCommande(){
       "https://wa.me/" + numero +
       "?text=" + encodeURIComponent(message);
 
-      window.open(url, "_blank");
+      envoyerAvecPosition(message, numero);
 
    }
 }
@@ -1009,3 +1009,56 @@ position.value = "";
 });
 
 });
+function envoyerAvecPosition(message, numero){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(
+
+function(position){
+
+let latitude = position.coords.latitude;
+let longitude = position.coords.longitude;
+
+let lienPosition =
+`https://maps.google.com/?q=${latitude},${longitude}`;
+
+message += `
+
+Position : ${lienPosition}`;
+
+ouvrirWhatsApp(message, numero);
+
+},
+
+function(){
+
+// si iphone refuse la position
+ouvrirWhatsApp(message + "\nPosition : non autorisée", numero);
+
+},
+
+{
+enableHighAccuracy:true,
+timeout:10000
+}
+
+);
+
+}else{
+
+ouvrirWhatsApp(message, numero);
+
+}
+
+}
+
+
+function ouvrirWhatsApp(message, numero){
+
+let url =
+`https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+
+window.location.href = url;
+
+}
