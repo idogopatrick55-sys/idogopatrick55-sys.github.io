@@ -817,7 +817,14 @@ document.getElementById("popup").style.display = "none";
 localStorage.setItem("popupDejaVu", "oui");
 }
 window.addEventListener("load", function(){
-setTimeout(function(){
-document.getElementById("loader").style.display = "none";
-}, 2500); // durée en millisecondes
+let loader = document.getElementById("loader");
+
+setTimeout(()=>{
+loader.style.opacity = "0";
+
+setTimeout(()=>{
+loader.style.display = "none";
+}, 500);
+
+}, 500);
 });
