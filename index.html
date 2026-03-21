@@ -35,7 +35,13 @@
 </header>
                    <!-- Acceuil --> 
      <body>
-	
+	<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>👑 Délice Royal</h2>
+    <p>Bienvenue ! Découvrez nos plats et commandez facilement 😋</p>
+    <button onclick="fermerPopup()">Commencer</button>
+  </div>
+</div>
 <div id="installContainer" style="display:none;">
 
 <button id="installBtn">
@@ -1482,11 +1488,11 @@ Commander 🍕
 </button>
 <form class="commande-form" data-prix="4500">
 
-    <h2>Commande viande hachée</h2>
+    <h2>Commande Pizza viande hachée</h2>
 
     <!-- Nom client -->
     <div>
-        <label>Saisissez viande hachée :</label>
+        <label>Saisissez Pizza hachée :</label>
         <input type="text" class="nom-client" required>
     </div>
 
@@ -2151,7 +2157,7 @@ Commander🍜
    </div>
 </section>  
 
-<!-- A PROPOS -->
+       <!-- A PROPOS -->
 <section id="apropos" class="specialites">
     <h2>À propos</h2>
     <p>Délice Royal vous proposes des plats de qualités avec un service royal 👑</p>

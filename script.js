@@ -806,3 +806,13 @@ OneSignalDeferred.push(async function(OneSignal) {
 	allowLocalhostAsSecureOrigin: true
   });
 });
+window.onload = function(){
+if(localStorage.getItem("popupDejaVu")){
+document.getElementById("popup").style.display = "none";
+}
+}
+
+function fermerPopup(){
+document.getElementById("popup").style.display = "none";
+localStorage.setItem("popupDejaVu", "oui");
+}
