@@ -188,15 +188,14 @@ return;
 let montant = quantiteCommande * prixPlatRiz;
 
 if(optionLivraison === "oui"){
-
 montant += 1000;
-
 }
 
 messageRizCommande.style.color="green";
 messageRizCommande.textContent="Redirection vers WhatsApp...";
 
-let texteCommande = `Bonjour je suis ${nomClient}
+let texteCommande =
+`Bonjour je suis ${nomClient}
 
 Commande : Riz Gras
 Nombre de plats : ${quantiteCommande}
@@ -206,9 +205,37 @@ Total : ${montant} FCFA`;
 
 let numeroRestaurant = "22670017372";
 
-let lienWhatsApp = `https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
+
+// SI livraison = oui → ajouter position automatiquement
+if(optionLivraison === "oui" && navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+let latitude = position.coords.latitude;
+let longitude = position.coords.longitude;
+
+let lienPosition =
+`https://maps.google.com/?q=${latitude},${longitude}`;
+
+texteCommande += `
+
+Position : ${lienPosition}`;
+
+let lienWhatsApp =
+`https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
 
 window.location.href = lienWhatsApp;
+
+});
+
+}else{
+
+let lienWhatsApp =
+`https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
+
+window.location.href = lienWhatsApp;
+
+}
 
 });
     
@@ -235,32 +262,74 @@ chepType.addEventListener("change", calculChep);
 chepQuantite.addEventListener("input", calculChep);
 chepLivraison.addEventListener("change", calculChep);
 
+document.getElementById("chepForm").addEventListener("submit", function(e){
 
-document.getElementById("chepForm").addEventListener("submit", function(e) {
+e.preventDefault();
 
-    e.preventDefault();
+let nom = document.getElementById("chepNom").value;
 
-    let nom = document.getElementById("chepNom").value;
-    let type = chepType.options[chepType.selectedIndex].text;
-    let quantite = chepQuantite.value;
-    let livraison = chepLivraison.value;
-    let detail = document.getElementById("chepDetail").value;
-    let total = chepTotal.value;
+let typeSelect = document.getElementById("chepType");
+let type = typeSelect.options[typeSelect.selectedIndex].text;
 
-    let message = `Bonjour, je suis ${nom}.
+let quantite =
+document.getElementById("chepQuantite").value;
+
+let livraison =
+document.getElementById("chepLivraison").value;
+
+let detail =
+document.getElementById("chepDetail").value;
+
+let total =
+document.getElementById("chepTotal").value;
+
+
+let message =
+`Bonjour, je suis ${nom}
+
 Commande Chep:
-Type: ${type}
-Nombre de plats: ${quantite}
-Livraison: ${livraison}
-Détail: ${detail}
-Total: ${total}`;
+Type : ${type}
+Nombre de plats : ${quantite}
+Livraison : ${livraison}
+Détail : ${detail}
+Total : ${total}`;
 
-    let numero = "22670017372";
-    let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
 
-    window.open(url, "_blank");
+let numero = "22670017372";
+
+
+// position automatique si livraison
+if(livraison === "oui" && navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+let latitude = position.coords.latitude;
+let longitude = position.coords.longitude;
+
+let lienPosition =
+`https://maps.google.com/?q=${latitude},${longitude}`;
+
+message += `
+
+Position : ${lienPosition}`;
+
+let url =
+`https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
+
 });
 
+}else{
+
+let url =
+`https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
+
+}
+
+});
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -382,8 +451,9 @@ function envoyerCommandeGonre(){
    let livraison = document.getElementById("livraisonGonre").value;
    let total = document.getElementById("prixTotalGonre").textContent;
 
-   let texteLivraison = (livraison === "oui") ?
-      "Oui (+1000 FCFA)" : "Non";
+   let texteLivraison =
+   (livraison === "oui") ?
+   "Oui (+1000 FCFA)" : "Non";
 
    let message =
       "Bonjour, je suis : " + nom + "\n\n" +
@@ -395,9 +465,39 @@ function envoyerCommandeGonre(){
 
    let numero = "22657376775";
 
-   let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
 
-   window.open(url, "_blank");
+   // SI livraison = oui → demander position automatiquement
+   if(livraison === "oui" && navigator.geolocation){
+
+      navigator.geolocation.getCurrentPosition(function(position){
+
+         let latitude = position.coords.latitude;
+         let longitude = position.coords.longitude;
+
+         let lienPosition =
+         "https://maps.google.com/?q=" +
+         latitude + "," + longitude;
+
+         message += "\nPosition : " + lienPosition;
+
+         let url =
+         "https://wa.me/" + numero +
+         "?text=" + encodeURIComponent(message);
+
+         window.open(url, "_blank");
+
+      });
+
+   }else{
+
+      let url =
+      "https://wa.me/" + numero +
+      "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank");
+
+   }
+
 }
 function OuvrirForm(){
 
@@ -450,16 +550,47 @@ function envoyeCommande(){
    let texteLivraison = (livraison == "oui") ? "Oui (+1000 FCFA)" : "Non";
    let total = document.getElementById("PrixTotal").textContent;
 
-   let message =  "Bonjour, je suis : " + NoM +
-                 "%0ACommande :" +
-                 "%0AGonré : " + nbG +
-                 "%0AKoumvando : " + nbK +
-				 "%0ALivraison : " + texteLivraison +
-                 "%0APrix Total : " + total + " FCFA";
+   let message =
+      "Bonjour, je suis : " + NoM + "\n\n" +
+      "Commande :\n" +
+      "Gonré : " + nbG + "\n" +
+      "Koumvando : " + nbK + "\n" +
+      "Livraison : " + texteLivraison + "\n\n" +
+      "Prix Total : " + total + " FCFA";
 
    let numero = "22657376775"; // ton numéro sans +
 
-   window.open("https://wa.me/" + numero + "?text=" + message, "_blank");
+   // SI livraison = oui → demander position automatiquement
+   if(livraison === "oui" && navigator.geolocation){
+
+      navigator.geolocation.getCurrentPosition(function(position){
+
+         let latitude = position.coords.latitude;
+         let longitude = position.coords.longitude;
+
+         let lienPosition =
+         "https://maps.google.com/?q=" +
+         latitude + "," + longitude;
+
+         message += "\nPosition : " + lienPosition;
+
+         let url =
+         "https://wa.me/" + numero +
+         "?text=" + encodeURIComponent(message);
+
+         window.open(url, "_blank");
+
+      });
+
+   }else{
+
+      let url =
+      "https://wa.me/" + numero +
+      "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank");
+
+   }
 }
 function OuvrirFor(){
 
@@ -549,23 +680,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // LANCER COMMANDE
-    document.addEventListener("click", function(e) {
+document.addEventListener("click", function(e) {
 
-        if (!e.target.classList.contains("btn-commander")) return;
+    if (!e.target.classList.contains("btn-commander")) return;
 
-        let form = e.target.closest(".commande-form");
+    let form = e.target.closest(".commande-form");
 
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
 
-        let nom = form.querySelector(".nom-client").value;
-        let quantite = form.querySelector(".quantite").value;
-        let livraison = form.querySelector(".livraison").value == "1000" ? "Oui" : "Non";
-        let total = form.querySelector(".total").innerText;
+    let nom = form.querySelector(".nom-client").value;
+    let quantite = form.querySelector(".quantite").value;
+    let livraisonValue = form.querySelector(".livraison").value;
+    let livraison = livraisonValue == "1000" ? "Oui" : "Non";
+    let total = form.querySelector(".total").innerText;
 
-        let message =
+    let message =
 `Bonjour, je souhaite commander :
 
 Nom : ${nom}
@@ -573,12 +705,40 @@ Quantité : ${quantite}
 Livraison : ${livraison}
 Total : ${total} F CFA`;
 
-        let numero = "22670017372"; // MET TON NUMERO
+    let numero = "22670017372";
 
-        let url = `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+    // SI livraison = oui → demander position
+    if(livraisonValue == "1000" && navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+
+            let lienPosition =
+            `https://maps.google.com/?q=${latitude},${longitude}`;
+
+            message += `
+
+Position : ${lienPosition}`;
+
+            let url =
+            `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+
+            window.open(url, "_blank");
+
+        });
+
+    }else{
+
+        let url =
+        `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
 
         window.open(url, "_blank");
-    });
+
+    }
+
+});
 
 });
 window.ouvrirPremium = function(button) {
@@ -827,4 +987,25 @@ loader.style.display = "none";
 }, 500);
 
 }, 500);
+});
+document.querySelectorAll(".livraison").forEach(function(select){
+
+select.addEventListener("change", function(){
+
+let form = select.closest("form");
+let position = form.querySelector(".position");
+
+if(select.value == "1000"){
+
+position.style.display = "block";
+
+}else{
+
+position.style.display = "none";
+position.value = "";
+
+}
+
+});
+
 });
