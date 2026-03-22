@@ -975,6 +975,3 @@ encodeURIComponent(message);
 window.location.href = url;
 
 }
-OneSignal.push(function() {
-    OneSignal.setBadgeCount(0);
-});
