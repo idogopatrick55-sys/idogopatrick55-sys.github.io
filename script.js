@@ -1009,8 +1009,33 @@ position.value = "";
 });
 
 });
-function envoyerAvecPosition(message, numero){
+function envoyerAvecPosition(message, numero, livraison){
 
+// si pas de livraison → envoi direct
+if(livraison != "oui" && livraison != "1000"){
+
+ouvrirWhatsApp(message, numero);
+return;
+
+}
+
+
+// on prépare un envoi de secours
+let dejaEnvoye = false;
+
+function envoyer(messageFinal){
+
+if(!dejaEnvoye){
+
+dejaEnvoye = true;
+ouvrirWhatsApp(messageFinal, numero);
+
+}
+
+}
+
+
+// si GPS disponible
 if(navigator.geolocation){
 
 navigator.geolocation.getCurrentPosition(
@@ -1021,52 +1046,65 @@ let latitude = position.coords.latitude;
 let longitude = position.coords.longitude;
 
 let lienPosition =
-`https://maps.google.com/?q=${latitude},${longitude}`;
+"https://maps.google.com/?q=" +
+latitude + "," + longitude;
 
-message += `
-
-Position : ${lienPosition}`;
-
-ouvrirWhatsApp(message, numero);
+envoyer(
+message +
+"\n\nPosition : " +
+lienPosition
+);
 
 },
 
 function(){
 
-// si iphone refuse la position
-ouvrirWhatsApp(message + "\nPosition : non autorisée", numero);
+envoyer(
+message +
+"\n\nPosition : non disponible"
+);
 
 },
 
 {
 enableHighAccuracy:true,
-timeout:10000
+timeout:6000
 }
 
 );
 
+
+// sécurité : si GPS bloque trop longtemps
+setTimeout(function(){
+
+envoyer(
+message +
+"\n\nPosition : non détectée"
+);
+
+}, 7000);
+
+
 }else{
 
-ouvrirWhatsApp(message, numero);
+envoyer(message);
 
 }
 
 }
-if(livraison == "oui"){
 
-envoyerAvecPosition(message, numero);
 
-}else{
-
-ouvrirWhatsApp(message, numero);
-
-}
 
 function ouvrirWhatsApp(message, numero){
 
 let url =
-`https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+"https://wa.me/" +
+numero +
+"?text=" +
+encodeURIComponent(message);
 
+
+// meilleur pour téléphone
 window.location.href = url;
 
 }
