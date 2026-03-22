@@ -18,4 +18,12 @@
       "type": "image/png"
     }
   ]
+  {
+  "contents": {"fr": "Nouveau message 📩"},
+  
+  "ios_badgeType": "Increase",
+  "ios_badgeCount": 1,
+
+  "android_badgeCount": 1
+}
 }

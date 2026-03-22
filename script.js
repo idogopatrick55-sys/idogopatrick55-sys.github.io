@@ -975,3 +975,28 @@ encodeURIComponent(message);
 window.location.href = url;
 
 }
+OneSignal.push(function() {
+    OneSignal.setBadgeCount(0);
+});
+let notifications = localStorage.getItem("notif") || 0;
+
+document.getElementById("badge").innerText =
+notifications > 0 ? notifications : "";
+
+function ajouterNotif(){
+    notifications++;
+    document.getElementById("badge").innerText = notifications;
+    localStorage.setItem("notif", notifications);
+}
+
+function resetNotif(){
+    notifications = 0;
+    document.getElementById("badge").innerText = "";
+    localStorage.setItem("notif", notifications);
+}
+
+OneSignal.push(function(){
+    OneSignal.on('notificationDisplay', function () {
+        ajouterNotif();
+    });
+});
