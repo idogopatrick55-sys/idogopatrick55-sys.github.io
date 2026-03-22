@@ -204,39 +204,11 @@ Détail : ${detailCommande}
 Total : ${montant} FCFA`;
 
 let numeroRestaurant = "22670017372";
-
-
-// SI livraison = oui → ajouter position automatiquement
-if(optionLivraison === "oui" && navigator.geolocation){
-
-navigator.geolocation.getCurrentPosition(function(position){
-
-let latitude = position.coords.latitude;
-let longitude = position.coords.longitude;
-
-let lienPosition =
-`https://maps.google.com/?q=${latitude},${longitude}`;
-
-texteCommande += `
-
-Position : ${lienPosition}`;
-
-let lienWhatsApp =
-`https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
-
-envoyerAvecPosition(texteCommande, numeroRestaurant);
-
-});
-
-}else{
-
-let lienWhatsApp =
-`https://wa.me/${numeroRestaurant}?text=${encodeURIComponent(texteCommande)}`;
-
-window.location.href = lienWhatsApp;
-
-}
-
+envoyerAvecPosition(
+message,
+numero,
+livraisonValue
+);
 });
     
 let chepType = document.getElementById("chepType");
@@ -296,38 +268,11 @@ Total : ${total}`;
 
 
 let numero = "22670017372";
-
-
-// position automatique si livraison
-if(livraison === "oui" && navigator.geolocation){
-
-navigator.geolocation.getCurrentPosition(function(position){
-
-let latitude = position.coords.latitude;
-let longitude = position.coords.longitude;
-
-let lienPosition =
-`https://maps.google.com/?q=${latitude},${longitude}`;
-
-message += `
-
-Position : ${lienPosition}`;
-
-let url =
-`https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
-
-envoyerAvecPosition(message, numero);
-
-});
-
-}else{
-
-let url =
-`https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
-
-window.open(url, "_blank");
-
-}
+envoyerAvecPosition(
+message,
+numero,
+livraisonValue
+);
 
 });
 
@@ -465,40 +410,13 @@ function envoyerCommandeGonre(){
 
    let numero = "22657376775";
 
-
-   // SI livraison = oui → demander position automatiquement
-   if(livraison === "oui" && navigator.geolocation){
-
-      navigator.geolocation.getCurrentPosition(function(position){
-
-         let latitude = position.coords.latitude;
-         let longitude = position.coords.longitude;
-
-         let lienPosition =
-         "https://maps.google.com/?q=" +
-         latitude + "," + longitude;
-
-         message += "\nPosition : " + lienPosition;
-
-         let url =
-         "https://wa.me/" + numero +
-         "?text=" + encodeURIComponent(message);
-
-        envoyerAvecPosition(message, numero);
-
-      });
-
-   }else{
-
-      let url =
-      "https://wa.me/" + numero +
-      "?text=" + encodeURIComponent(message);
-
-     window.open(url, "_blank");
-
-   }
-
+envoyerAvecPosition(
+message,
+numero,
+livraisonValue
+);
 }
+
 function OuvrirForm(){
 
    let form = document.getElementById("FormCommande");
@@ -559,38 +477,12 @@ function envoyeCommande(){
       "Prix Total : " + total + " FCFA";
 
    let numero = "22657376775"; // ton numéro sans +
-
-   // SI livraison = oui → demander position automatiquement
-   if(livraison === "oui" && navigator.geolocation){
-
-      navigator.geolocation.getCurrentPosition(function(position){
-
-         let latitude = position.coords.latitude;
-         let longitude = position.coords.longitude;
-
-         let lienPosition =
-         "https://maps.google.com/?q=" +
-         latitude + "," + longitude;
-
-         message += "\nPosition : " + lienPosition;
-
-         let url =
-         "https://wa.me/" + numero +
-         "?text=" + encodeURIComponent(message);
-
-         envoyerAvecPosition(message, numero);
-
-      });
-
-   }else{
-
-      let url =
-      "https://wa.me/" + numero +
-      "?text=" + encodeURIComponent(message);
-
-      window.open(url, "_blank");
-
-   }
+envoyerAvecPosition(
+message,
+numero,
+livraisonValue
+);
+   
 }
 function OuvrirFor(){
 
@@ -707,36 +599,11 @@ Total : ${total} F CFA`;
 
     let numero = "22670017372";
 
-    // SI livraison = oui → demander position
-    if(livraisonValue == "1000" && navigator.geolocation){
-
-        navigator.geolocation.getCurrentPosition(function(position){
-
-            let latitude = position.coords.latitude;
-            let longitude = position.coords.longitude;
-
-            let lienPosition =
-            `https://maps.google.com/?q=${latitude},${longitude}`;
-
-            message += `
-
-Position : ${lienPosition}`;
-
-            let url =
-            `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
-
-           envoyerAvecPosition(message, numero);
-
-        });
-
-    }else{
-
-        let url =
-        `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
-
-        window.open(url, "_blank");
-
-    }
+    envoyerAvecPosition(
+   message,
+   numero,
+   livraisonValue
+);
 
 });
 
