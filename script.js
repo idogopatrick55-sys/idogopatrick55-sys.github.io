@@ -978,15 +978,19 @@ function payer(btn){
 let nom = document.querySelector(".nom").value;
 let total = document.querySelector(".total").innerText;
 
+total = parseFloat(total.replace(/\D/g,''));
+
 if(!nom){
-
 alert("Entre ton nom");
-
 return;
-
 }
 
-fetch("https://paydunya-server-gpg1.onrender.com/payer",{
+if(isNaN(total) || total <= 0){
+alert("Montant invalide");
+return;
+}
+
+fetch("https://paydunya-server-gpg1.onrender.com/payer", {
 
 method:"POST",
 
@@ -1006,6 +1010,8 @@ nom: nom
 .then(res=>res.json())
 
 .then(data=>{
+
+console.log("DATA RECUE :", data);
 
 PayDunya.setup({
 
@@ -1038,7 +1044,11 @@ fullname: nom
 })
 
 .catch(error=>{
-  console.log("ERREUR COMPLETE :", error);
-  alert("Erreur connexion serveur");
+
+console.log("ERREUR COMPLETE :", error);
+
+alert("Erreur connexion serveur");
+
 });
+
 }
