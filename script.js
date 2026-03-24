@@ -205,9 +205,9 @@ Total : ${montant} FCFA`;
 
 let numeroRestaurant = "22670017372";
 envoyerAvecPosition(
-message,
-numero,
-livraisonValue
+messageRizCommande,
+numeroRestaurant,
+optionLivraison
 );
 });
     
@@ -271,7 +271,7 @@ let numero = "22670017372";
 envoyerAvecPosition(
 message,
 numero,
-livraisonValue
+livraison
 );
 
 });
@@ -413,7 +413,7 @@ function envoyerCommandeGonre(){
 envoyerAvecPosition(
 message,
 numero,
-livraisonValue
+livraison
 );
 }
 
@@ -480,7 +480,7 @@ function envoyeCommande(){
 envoyerAvecPosition(
 message,
 numero,
-livraisonValue
+livraison
 );
    
 }
@@ -898,9 +898,7 @@ dejaEnvoye = true;
 ouvrirWhatsApp(messageFinal, numero);
 
 }
-
 }
-
 
 // si GPS disponible
 if(navigator.geolocation){
@@ -973,5 +971,97 @@ encodeURIComponent(message);
 
 // meilleur pour téléphone
 window.location.href = url;
+
+}
+function payer(btn){
+
+  let form = btn.closest("form");
+
+  let nom = form.querySelector(".nom").value;
+  let total = form.querySelector(".total").innerText;
+
+  if(!nom){
+    alert("Entre ton nom !");
+    return;
+  }
+
+  let confirmation = confirm("Paiement requis\nMontant: " + total);
+
+  if(confirmation){
+
+    let message = "Nom: " + nom + " Montant: " + total;
+
+    let url = "https://wa.me/22655198680?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+  }
+}
+function payer(btn){
+
+let form = btn.closest("form");
+
+let nom = form.querySelector(".nom").value;
+let total = form.querySelector(".total").innerText;
+
+if(!nom){
+alert("Entre ton nom");
+return;
+}
+
+fetch("https://paydunya-server-gpg1.onrender.com/payer", {
+
+method: "POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body: JSON.stringify({
+
+montant: total,
+nom: nom
+
+})
+
+})
+
+.then(res => res.json())
+
+.then(data => {
+
+PayDunya.setup({
+
+masterKey: data.masterKey,
+privateKey: data.privateKey,
+publicKey: data.publicKey,
+token: data.token,
+
+mode: "test"
+
+});
+
+PayDunya.CheckoutInvoice({
+
+total_amount: total,
+
+description: "Commande nourriture",
+
+customer_info: {
+
+fullname: nom
+
+}
+
+});
+
+})
+
+.catch(error => {
+
+alert("Erreur connexion serveur");
+
+console.log(error);
+
+});
 
 }
