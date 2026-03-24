@@ -1038,11 +1038,7 @@ fullname: nom
 })
 
 .catch(error=>{
-
-alert("Erreur connexion serveur");
-
-console.log(error);
-
+  console.log("ERREUR COMPLETE :", error);
+  alert("Erreur connexion serveur");
 });
-
 }
