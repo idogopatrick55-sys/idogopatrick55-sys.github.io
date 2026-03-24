@@ -975,42 +975,20 @@ window.location.href = url;
 }
 function payer(btn){
 
-  let form = btn.closest("form");
-
-  let nom = form.querySelector(".nom").value;
-  let total = form.querySelector(".total").innerText;
-
-  if(!nom){
-    alert("Entre ton nom !");
-    return;
-  }
-
-  let confirmation = confirm("Paiement requis\nMontant: " + total);
-
-  if(confirmation){
-
-    let message = "Nom: " + nom + " Montant: " + total;
-
-    let url = "https://wa.me/22655198680?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
-  }
-}
-function payer(btn){
-
-let form = btn.closest("form");
-
-let nom = form.querySelector(".nom").value;
-let total = form.querySelector(".total").innerText;
+let nom = document.querySelector(".nom").value;
+let total = document.querySelector(".total").innerText;
 
 if(!nom){
+
 alert("Entre ton nom");
+
 return;
+
 }
 
-fetch("https://paydunya-server-gpg1.onrender.com/payer", {
+fetch("https://paydunya-server-gpg1.onrender.com/payer",{
 
-method: "POST",
+method:"POST",
 
 headers:{
 "Content-Type":"application/json"
@@ -1025,18 +1003,21 @@ nom: nom
 
 })
 
-.then(res => res.json())
+.then(res=>res.json())
 
-.then(data => {
+.then(data=>{
 
 PayDunya.setup({
 
-masterKey: data.masterKey,
-privateKey: data.privateKey,
-publicKey: data.publicKey,
-token: data.token,
+masterKey:data.masterKey,
 
-mode: "test"
+privateKey:data.privateKey,
+
+publicKey:data.publicKey,
+
+token:data.token,
+
+mode:"test"
 
 });
 
@@ -1044,9 +1025,9 @@ PayDunya.CheckoutInvoice({
 
 total_amount: total,
 
-description: "Commande nourriture",
+description:"Commande nourriture",
 
-customer_info: {
+customer_info:{
 
 fullname: nom
 
@@ -1056,7 +1037,7 @@ fullname: nom
 
 })
 
-.catch(error => {
+.catch(error=>{
 
 alert("Erreur connexion serveur");
 
