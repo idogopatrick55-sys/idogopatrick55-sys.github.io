@@ -975,22 +975,11 @@ window.location.href = url;
 }
 function payer(btn){
 
-let nom = document.querySelector(".nom").value;
 let total = document.querySelector(".total").innerText;
 
 total = parseFloat(total.replace(/\D/g,''));
 
-if(!nom){
-alert("Entre ton nom");
-return;
-}
-
-if(isNaN(total) || total <= 0){
-alert("Montant invalide");
-return;
-}
-
-fetch("https://paydunya-server-gpg1.onrender.com/payer", {
+fetch("https://paydunya-server-gpg1.onrender.com/payer",{
 
 method:"POST",
 
@@ -1000,8 +989,7 @@ headers:{
 
 body: JSON.stringify({
 
-montant: total,
-nom: nom
+montant: total
 
 })
 
@@ -1011,43 +999,15 @@ nom: nom
 
 .then(data=>{
 
-console.log("DATA RECUE :", data);
-
-PayDunya.setup({
-
-masterKey:data.masterKey,
-
-privateKey:data.privateKey,
-
-publicKey:data.publicKey,
-
-token:data.token,
-
-mode:"test"
-
-});
-
-PayDunya.CheckoutInvoice({
-
-total_amount: total,
-
-description:"Commande nourriture",
-
-customer_info:{
-
-fullname: nom
-
-}
-
-});
+window.location.href = data.url;
 
 })
 
-.catch(error=>{
+.catch(err=>{
 
-console.log("ERREUR COMPLETE :", error);
+alert("Erreur paiement");
 
-alert("Erreur connexion serveur");
+console.log(err);
 
 });
 
