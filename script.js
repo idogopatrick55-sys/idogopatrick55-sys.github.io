@@ -997,14 +997,10 @@ montant: total
 
 .then(res=>res.json())
 
-.then(data => {
-  console.log("REPONSE SERVEUR :", data);
+.then(data=>{
+  console.log("URL PAYDUNYA :", data);
 
-  if(data.url){
-    window.location.href = data.url;
-  } else {
-    alert("URL non reçue !");
-  }
+  window.location.href = data.url;
 })
 
 .catch(err=>{
