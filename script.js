@@ -998,9 +998,20 @@ montant: total
 .then(res=>res.json())
 
 .then(data=>{
-  console.log("URL PAYDUNYA :", data);
 
-  window.location.href = data.url;
+console.log("DATA RECUE :", data);
+
+if(!data.url){
+
+alert("Erreur PayDunya");
+console.log(data.error);
+
+return;
+
+}
+
+window.location.href = data.url;
+
 })
 
 .catch(err=>{
