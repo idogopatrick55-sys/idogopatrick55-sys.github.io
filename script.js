@@ -997,10 +997,14 @@ montant: total
 
 .then(res=>res.json())
 
-.then(data=>{
+.then(data => {
+  console.log("REPONSE SERVEUR :", data);
 
-window.location.href = data.url;
-
+  if(data.url){
+    window.location.href = data.url;
+  } else {
+    alert("URL non reçue !");
+  }
 })
 
 .catch(err=>{
